@@ -16,6 +16,9 @@ type Circle = {
 
 type Shape = Square | Rectangle | Circle;
 
-export function area(shape: Shape): number {
-	// Return the area for each kind of shape
+export function area(shape: Shape): number | string {
+	if (shape.kind === "square") return shape.size * shape.size;
+	if (shape.kind === "rectangle") return shape.width * shape.height;
+	if (shape.kind === "circle") return Math.PI * (shape.radius)^2;
+	return "Unknown shape";
 }
